@@ -4,6 +4,11 @@ body{
     height: 100vh;
 }
 
+:root{
+    --header-min: 150px;
+    --dashboard-min: 300px;
+}
+
 body{
     margin: 0 0 0 0;
 }
@@ -13,8 +18,8 @@ body{
     width: 100%;
     min-height: 570px;
     display: grid;
-    grid-template-columns: minmax(300px, 20%) 65% 15%;
-    grid-template-rows: 20% 70% 10%;
+    grid-template-columns: minmax(var(--dashboard-min), 20%) 55% 25%;
+    grid-template-rows: minmax(var(--header-min), 20%) 70% 10%;
 }
 
 #dashboard{
@@ -49,8 +54,10 @@ body{
     align-items: center;
 }
 
-#dashboard ul svg{
+#dashboard ul img{
     justify-self: center;
+    width: 25px;
+    height: 25px;
 }
 
 #logo{
@@ -63,7 +70,17 @@ body{
     align-items: start;
 }
 
-#logo svg{
+#logo img{
     width: 40px;
     height: 40px;
+    justify-self: center;
+}
+
+#header{
+    display: grid;
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+
+    grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr);
+    grid-template-rows: minmax(100px, 1fr) minmax(100px, 1fr);
 }
